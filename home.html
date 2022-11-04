@@ -1,0 +1,201 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<style>
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+}
+html{
+    text-rendering: optimizeLegibility;
+    color:#555;
+}
+
+
+.row {
+    max-width:1140px;
+    margin:0 auto;
+}
+
+
+.container {
+    margin-top: 40px;
+}
+
+header {
+
+     background-image:linear-gradient(rgba(10, 10, 10, 0.5),rgba(1, 20, 18, 0.5)),url('https://cdn.britannica.com/79/150179-050-E2707D87/human-eye.jpg');
+
+ background-position:top;
+    background-size: cover;
+    background-attachment:fixed;
+    height:100vh;
+}
+
+.hero-text {
+    font-family:"Lato";
+    position:absolute;
+    width:1140px;
+    top:50%;
+    left:50%;
+  transform:translate(-50%,-50%);
+}
+
+
+
+.text-hero {
+    margin-top:0;
+    color:#FFF;
+    font-family:'Lato:ital';
+    font-size:240%;
+    font-weight:400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    
+}
+
+
+.btn{
+    font-family:'lato:ital';
+    display:inline-block;
+    padding:10px 30px;
+    border:solid 2px #fff;
+    font-weight:300;
+    text-decoration:none;
+    color:#000;
+    border-radius:100px;
+    transition: background-color 0.2s;
+}
+
+.btn:hover,
+.btn:active{
+    
+ display:inline-block;
+    padding:10px 30px;
+    border:solid 2px #fff;
+    font-weight:300;
+    text-decoration:none;
+    color:#000;
+    border-radius:200px;
+}
+
+
+
+input[type="reset"] {
+    display: none;
+}  
+
+    .custom-reset-upload{
+          border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color:#000;
+    border:solid 2px white;
+    border-radius: 200px;
+    padding:10px 30px;
+    }
+    .file{
+        background-color:#000;
+        width:400px;
+        color:white;
+        border-radius:200px;
+    }
+    ::-webkit-file-upload-button{
+                  border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color:#000;
+    border:solid 2px white;
+    border-radius: 200px;
+    padding:10px 30px;
+    }
+.title1{
+color:white;
+ font-family:'Lato:ital';
+    float: left;
+padding-top:10px;
+padding-left: 20px;
+    font-size:200%;
+    font-weight:400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    margin-left: 25%;
+    }
+    
+    .blackbackground{
+        background-color: black;
+        height:10%;
+    }
+    .img{
+height: 70px;
+    width: 70px;
+    float: left;}  
+    .upic{
+margin-top: 20px;}
+    .h2c{
+        color: white;
+        font-size:30px;
+    }
+    p{
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 2%;
+        font-family: cursive;
+    }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+ <head>
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
+     <title> 
+     Diabetic Retinopathy
+    </title>
+  </head>
+   <body>
+       <header>
+          <div class='blackbackground'><h1 class="title1">Diabetic Retinopathy Detection</h1> </div>
+           
+           <div class='hero-text'>
+               <h2 class='h2c'>What is it?</h2>
+           <p>Diabetic retinopathy (die-uh-BET-ik ret-ih-NOP-uh-thee) is a diabetes complication that affects eyes. It's caused by damage to the blood vessels of the light-sensitive tissue at the back of the eye (retina).
+
+At first, diabetic retinopathy might cause no symptoms or only mild vision problems. But it can lead to blindness.
+
+The condition can develop in anyone who has type 1 or type 2 diabetes. The longer you have diabetes and the less controlled your blood sugar is, the more likely you are to develop this eye complication.</p>
+        <h1 class="text-hero">
+         Submit Your Eye Scan For Checkup 
+        </h1>
+               <br><br>
+               <form id="upload-file" method="post" action="predict" enctype="multipart/form-data">
+            <input type="file" class='file'  id='file1' name='fileq' onchange="loadFile(event)" accept=".png,.jpg,.jpeg">
+            <input type="submit" class='btn'>
+    <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+<p><label for="file" style="cursor: pointer;"></label></p>
+<p><img id="output" class='upic'width="200" /></p>
+
+<script>
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+</script>
+
+               </form>
+               
+        </div>  
+           
+       </header>
+       
+     
+
+     </body>
+</html>
